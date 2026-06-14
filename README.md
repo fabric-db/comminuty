@@ -8,6 +8,24 @@ A community is a living graph of people, promises, responsibilities, contributio
 
 > Community is the first runtime. Governance is the first schema. Trust is the first primitive.
 
+## Anchor: Apache CloudStack
+
+Fabric as Community uses **Apache CloudStack as the infrastructure anchor**.
+
+CloudStack gives the community a stable open IaaS base: compute, networking, storage orchestration, accounts, domains, projects, zones, and operational cloud primitives. Fabric builds the community, governance, trust, and agent graph on top of that base.
+
+```text
+Apache CloudStack
+  -> Open IaaS anchor
+  -> Zones / Accounts / Domains / Projects
+  -> Kubernetes / k3s runtime layer
+  -> Fabric graph
+  -> Agents
+  -> Community governance
+```
+
+CloudStack is the anchor because Fabric needs an open cloud substrate that can be operated by communities, service providers, labs, universities, enterprises, and regional cloud partners without depending on a hyperscaler.
+
 ## Purpose
 
 This repo is the public operating model for the Fabric DB community.
@@ -22,6 +40,7 @@ It defines:
 - how partners participate
 - how community work is audited
 - how trust grows through contribution
+- how Apache CloudStack anchors community-owned infrastructure
 
 ## Core idea
 
@@ -47,6 +66,9 @@ Every meaningful community action should become a transparent, inspectable recor
 | Trust | Earned confidence based on visible contribution and behavior |
 | Agreement | Explicit commitment between people, maintainers, partners, or orgs |
 | Evidence | Links, logs, commits, reviews, notes, or artifacts supporting a decision |
+| CloudStackZone | Community or partner-operated infrastructure zone |
+| CloudStackAccount | Infrastructure account mapped to a person, org, tenant, or project |
+| CloudStackProject | Shared cloud project governed by community policy |
 
 ## Operating model
 
@@ -60,6 +82,7 @@ Idea
   -> Delivery
   -> Evidence
   -> Trust Update
+  -> CloudStack-backed Runtime when infrastructure is needed
 ```
 
 ## Repository structure
@@ -70,10 +93,10 @@ Idea
 ├── GOVERNANCE.md
 ├── CODE_OF_CONDUCT.md
 ├── CONTRIBUTING.md
-├── SECURITY.md
 ├── COMMUNITY_GRAPH.md
 ├── TRUST_MODEL.md
 ├── DECISION_PROCESS.md
+├── CLOUDSTACK_ANCHOR.md
 ├── proposals/
 │   └── README.md
 ├── decisions/
@@ -83,7 +106,6 @@ Idea
 │   ├── maintainer.md
 │   └── partner.md
 └── .github/
-    ├── ISSUE_TEMPLATE/
     └── workflows/
 ```
 
@@ -99,9 +121,11 @@ Idea
 - No hidden governance
 - No vendor lock-in
 - No capture by one actor
+- Community-operable infrastructure
+- Apache CloudStack as the open IaaS anchor
 
 ## Status
 
 This repository is the first public scaffold for Fabric as Community.
 
-The next step is to turn community activity into a governed Fabric graph.
+The next step is to turn community activity and CloudStack-backed infrastructure activity into a governed Fabric graph.
