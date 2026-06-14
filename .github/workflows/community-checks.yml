@@ -1,0 +1,28 @@
+name: Community Checks
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate-community-files:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Required files
+        run: |
+          test -f README.md
+          test -f GOVERNANCE.md
+          test -f CODE_OF_CONDUCT.md
+          test -f CONTRIBUTING.md
+          test -f COMMUNITY_GRAPH.md
+          test -f TRUST_MODEL.md
+          test -f DECISION_PROCESS.md
+          test -f proposals/README.md
+          test -f decisions/README.md
+          test -f roles/contributor.md
+          test -f roles/maintainer.md
+          test -f roles/partner.md
